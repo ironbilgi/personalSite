@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website">
+    <title>Personal Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=optional" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id ="navbar">
+    <nav>
+        <div class="logo">
+            <img src="images/surfacely_logo_lockup.svg" alt="Surfacely logo">
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-button" id="Github-Button">Github</button>
+            <button class="nav-button" id="Support-Button">Support</button>
+            <button class="nav-button" id="Privacy-Button">Privacy</button>
+            <button class="donate-button" id="Donate-Button">Donate</button>
+        </div>
+    </nav>
+  </div>
+  <header>
+    <h1 class="header-title">My Personal Site</h1>
+    <p class="header-subtitle">Welcome to my personal website!</p>
+    <div class="button-container">
+        <button class="link-button" id="Add-Chrome">Add to Chrome</button>
+        <button class="link-button" id="Tip-Button">Buy me a Coffee</button>
+    </div>
+  </header>
+  <main>
+    <div id = "featuresTitle">
+        <h2>Features</h2>
+        <h4>Here are some of the features of the extension:</h4>
+    </div>
+    <div id = "features">
+        <div class="feature">
+            <h3>Live 3D surface plotting</h3>
+            <p>Type any function f(x, y) and see it rendered as an interactive 3D surface instantly. Rotate, zoom, and pan to view it from any angle, powered by Plotly.js.</p>
+        </div>
+        <div class="feature">
+            <h3>Gradient vector visualization</h3>
+            <p>Click a point on the surface and see the gradient vector at that point, computed via finite differences — makes "steepest ascent" visible instead of just a formula.</p>
+        </div>
+        <div class="feature">
+            <h3>Level curves / contour view</h3>
+            <p>Toggle a 2D contour projection alongside the 3D view to connect level curves to the actual surface they slice.</p>
+        </div>
+          <div class="feature">
+            <h3>No install required</h3>
+            <p>Runs as a plain web page (with an optional installable PWA mode), so it works even on school Chromebooks where extensions are blocked.</p>
+        </div>
+        <div class="feature">
+            <h3>Instant function parsing</h3>
+            <p>Powered by math.js, so it accepts natural notation like x^2 + y^2 or sin(x)*cos(y) without special syntax.</p>
+        </div>
+        <div class="feature">
+            <h3>Lightweight and fast</h3>
+            <p>No backend, no account, no loading screen — everything runs client-side in the browser.</p>
+        </div>
+    </div>
+  </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

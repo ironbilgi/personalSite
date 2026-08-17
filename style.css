@@ -1,0 +1,168 @@
+:root {
+    --navy: #233b86;
+    --light-blue: #4a69c7;
+    --hover-blue: #007BFF;
+    --nav-padding: 1.5rem;
+
+    /* text colors */
+    --text-primary: #1a1a1a;   /* main body/heading text */
+    --text-muted: #6b7280;     /* secondary/de-emphasized text */
+    --text-light: #f5f5f5;     /* light text for dark backgrounds */
+}
+
+
+body {
+    margin: 0; /* removes the browser's default 8px page margin so things reach the edges */
+    font-family: "Poppins", sans-serif;
+}
+
+header h1 {
+    font-weight: 800;
+}
+
+header p {
+    font-weight: 400;
+}
+
+#navbar {
+    background-color: white;
+}
+
+#navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* pushes .logo to the left edge and .nav-buttons to the right edge */
+    padding: 0.75rem var(--nav-padding);
+}
+
+#navbar .logo img {
+    height: 50px;
+    width: auto;
+}
+
+#navbar .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--nav-padding); /* spacing between the buttons, no pixel math needed */
+}
+#navbar .nav-buttons .nav-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease; /* smooth color transition on hover */
+}
+#navbar .nav-buttons .nav-button:hover {
+    color: var(--hover-blue);
+}
+.donate-button {
+    background-color: var(--hover-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* smooth background color transition on hover */
+}
+.donate-button:hover {
+    background-color: var(--navy);
+}
+.link-button {
+    background-color: white;
+    color: var(--hover-blue);
+    border: 1px solid var(--hover-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.5s ease; /* smooth transition for hover effects */
+}
+.link-button:hover {
+    background-color: transparent;
+    color: white;
+    transform: translateY(-2px);
+    border: 1px solid white;
+    box-shadow: 0 4px 8px var(--navy);
+}
+header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
+    display: flex;
+    flex-direction: column; /* stacks h1, p, and the button row on top of each other */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    min-height: 50vh; /* expands the header's height; tweak to taste */
+    box-sizing: border-box;
+}
+
+.header-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: white;
+}
+.header-subtitle {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+.button-container {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem; /* spacing between the buttons */
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#featuresTitle {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+    gap: 4rem;
+    width: 100%;
+    max-width: 1000px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.feature {
+    background: white;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease; /* smooth transition for hover effects */
+}
+.feature:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow on hover */
+    transform: translateY(-5px); /* slight lift effect */
+    border-color: var(--light-blue); /* change border color on hover */
+}
+
+
+.feature h3 {
+    color: var(--text-primary);
+}
+.feature p {
+    color: var(--text-muted);
+}
+#featuresTitle h4 {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+@media (max-width: 768px) {
+    #features {
+        grid-template-columns: 1fr; /* single column on smaller screens */
+        gap: 2rem;
+    }
+}
