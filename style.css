@@ -45,6 +45,66 @@ header p {
     align-items: center;
     gap: var(--nav-padding); /* spacing between the buttons, no pixel math needed */
 }
+
+/* Hamburger button: hidden until the mobile breakpoint kicks in */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.75rem;
+    height: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 20; /* ensures the hamburger is above the nav menu when open */
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--navy);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Morphs the three bars into an X when the menu is open */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(0.55rem) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-0.55rem) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* only shows up once the screen is this narrow */
+    }
+
+    #navbar .nav-buttons {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 220px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 5rem 1.5rem 1.5rem;
+        background: white;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%); /* pushed fully off-screen to the right */
+        transition: transform 0.3s ease;
+        z-index: 15;
+    }
+
+    #navbar .nav-buttons.nav-open {
+        transform: translateX(0); /* slides into view */
+    }
+}
 #navbar .nav-buttons .nav-button {
     background-color: transparent;
     border: none;
