@@ -153,7 +153,11 @@ main {
    ========================================================================== */
 
 header {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
+    background-color: var(--navy); /* fallback while the layers below load */
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
+    background-size: 48px 48px, cover; /* grid tile size, then the gradient covers the whole header */
     display: flex;
     flex-direction: column; /* stacks h1, p, and the button row on top of each other */
     align-items: center;
